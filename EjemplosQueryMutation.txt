@@ -1,0 +1,64 @@
+
+URL PRINCIPAL PARA graphiql
+http://localhost:8080/graphiql
+
+
+METODOS QUERY
+
+TODOS LOS LIBROS:
+query {
+getLibros{id,nombre,titulo,nombreAutor,edicion,
+  annoPublicacion,cantidadPaginas}
+}
+
+LIBRO POR ID:
+query{
+ getLibro(id: 2){id,nombre,titulo,nombreAutor,edicion,
+  annoPublicacion,cantidadPaginas}
+}
+
+LIBRO POR PROXIMIDAD:
+
+query{
+ getLibrosTitulo(titulo:"Estaciones"){id,nombre,titulo,nombreAutor,edicion,
+  annoPublicacion,cantidadPaginas}
+}
+
+
+METODOS MUTATION:
+
+CREAR:
+
+mutation {
+createLibro(
+ nombre:"Senor de los Buenos",
+ titulo:"Titulo Especial",
+ nombreAutor: "Bueno",
+ edicion: 10,
+annoPublicacion: 1943,
+cantidadPaginas:499) {
+ id,nombre,titulo,nombreAutor,edicion,
+  annoPublicacion,cantidadPaginas
+}
+}
+
+BORRAR:
+mutation {
+deleteLibro(id: 4)
+}
+
+ACTUALIZAR
+
+mutation {
+updateLibro(
+  id:2,
+ nombre:"Senor de los Cambios Confirmados",
+ titulo:"Titulo General",
+ nombreAutor: "Tolkien",
+ edicion: 10,
+annoPublicacion: 1943,
+cantidadPaginas:499) {
+ id,nombre,titulo,nombreAutor,edicion,
+  annoPublicacion,cantidadPaginas
+}
+}

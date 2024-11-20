@@ -1,0 +1,22 @@
+type Libro {
+    id: ID!,
+    nombre: String,
+    titulo: String,
+    nombreAutor: String,
+    edicion: Int,
+    annoPublicacion: Int,
+    cantidadPaginas: Int
+}
+
+type Query {
+    getLibros:[Libro]
+    getLibro(id: ID):Libro
+    getLibrosTitulo(titulo:String):[Libro]
+}
+type Mutation {
+    createLibro(nombre: String!, titulo: String!, nombreAutor: String!,
+        edicion: Int!, annoPublicacion: Int!, cantidadPaginas: Int!):Libro
+    deleteLibro(id: ID): Boolean
+    updateLibro(id:ID!,nombre: String!, titulo: String!, nombreAutor: String!,
+        edicion: Int!, annoPublicacion: Int!, cantidadPaginas: Int!):Libro
+}
